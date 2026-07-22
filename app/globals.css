@@ -87,23 +87,37 @@
 
 .light {
   color-scheme: light;
-  --background: oklch(0.97 0.004 90);
-  --foreground: oklch(0.16 0.004 260);
-  --card: oklch(0.99 0.003 90);
-  --card-foreground: oklch(0.16 0.004 260);
-  --popover: oklch(0.99 0.003 90);
-  --popover-foreground: oklch(0.16 0.004 260);
-  --primary: oklch(0.16 0.004 260);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.92 0.004 90);
-  --secondary-foreground: oklch(0.16 0.004 260);
-  --muted: oklch(0.92 0.004 90);
-  --muted-foreground: oklch(0.45 0.006 260);
-  --accent: oklch(0.62 0.14 55);
-  --accent-foreground: oklch(0.98 0 0);
-  --border: oklch(0.16 0.004 260 / 12%);
-  --input: oklch(0.16 0.004 260 / 16%);
-  --ring: oklch(0.62 0.14 55);
+  --background: oklch(0.94 0.01 85);
+  --foreground: oklch(0.22 0.01 260);
+  --card: oklch(0.89 0.012 85);
+  --card-foreground: oklch(0.22 0.01 260);
+  --popover: oklch(0.91 0.01 85);
+  --popover-foreground: oklch(0.22 0.01 260);
+  --primary: oklch(0.18 0.01 260);
+  --primary-foreground: oklch(0.97 0.004 90);
+  --secondary: oklch(0.84 0.015 85);
+  --secondary-foreground: oklch(0.22 0.01 260);
+  --muted: oklch(0.86 0.012 85);
+  --muted-foreground: oklch(0.38 0.015 260);
+  --accent: oklch(0.55 0.18 55);
+  --accent-foreground: oklch(0.99 0.004 90);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.16 0.004 260 / 14%);
+  --input: oklch(0.16 0.004 260 / 18%);
+  --ring: oklch(0.55 0.18 55);
+  --chart-1: oklch(0.55 0.18 55);
+  --chart-2: oklch(0.48 0.12 200);
+  --chart-3: oklch(0.42 0.08 260);
+  --chart-4: oklch(0.35 0.04 260);
+  --chart-5: oklch(0.28 0.02 260);
+  --sidebar: oklch(0.89 0.012 85);
+  --sidebar-foreground: oklch(0.22 0.01 260);
+  --sidebar-primary: oklch(0.18 0.01 260);
+  --sidebar-primary-foreground: oklch(0.97 0.004 85);
+  --sidebar-accent: oklch(0.84 0.015 85);
+  --sidebar-accent-foreground: oklch(0.22 0.01 260);
+  --sidebar-border: oklch(0.16 0.004 260 / 14%);
+  --sidebar-ring: oklch(0.55 0.18 55);
 }
 
 .dark {
@@ -204,6 +218,10 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
   animation: grain 0.6s steps(2) infinite;
+}
+
+.light .film-grain::before {
+  opacity: 0.025;
 }
 
 @keyframes grain {
