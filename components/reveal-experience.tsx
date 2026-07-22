@@ -113,10 +113,11 @@ export function RevealExperience() {
       {/* Nome central fixo */}
       <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center px-4 text-center">
         <motion.h1
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1] }}
-          className="font-display text-[19vw] font-normal uppercase leading-[0.82] tracking-[0.02em] text-foreground drop-shadow-[0_8px_40px_rgba(0,0,0,0.55)] md:text-[15vw]"
+          className="font-display text-[19vw] font-normal uppercase leading-[0.82] tracking-[0.02em] text-foreground md:text-[15vw]"
+          style={{ textShadow: '0 8px 40px rgba(0,0,0,0.55)' }}
         >
           Vitor Oliveira
         </motion.h1>

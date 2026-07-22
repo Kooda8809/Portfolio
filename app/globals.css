@@ -184,6 +184,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display, .font-serif {
+    text-rendering: optimizeLegibility;
   }
 }
 
@@ -243,4 +249,12 @@
 
 .animate-fade-up {
   animation: fade-up 1s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.font-display {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-stretch: normal;
+  font-variation-settings: normal;
 }
