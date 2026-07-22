@@ -2,16 +2,19 @@
 
 import Image from "next/image"
 import { motion } from "motion/react"
-
-const stats = [
-  { value: "8+", label: "Anos de experiência" },
-  { value: "240", label: "Projetos entregues" },
-  { value: "50M", label: "Views acumuladas" },
-]
-
-const tools = ["Premiere Pro", "After Effects", "DaVinci Resolve", "Motion", "Cinema 4D"]
+import { useI18n } from "@/lib/i18n"
 
 export function AboutSection() {
+  const { t } = useI18n()
+
+  const stats = [
+    { value: "8+", label: t("about.stat1") },
+    { value: "240", label: t("about.stat2") },
+    { value: "50M", label: t("about.stat3") },
+  ]
+
+  const tools = ["Premiere Pro", "After Effects", "DaVinci Resolve", "Motion", "Cinema 4D"]
+
   return (
     <section id="about" className="relative z-10 border-t border-border bg-background px-6 py-24 md:px-10 md:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
@@ -39,20 +42,13 @@ export function AboutSection() {
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
           className="flex flex-col gap-6"
         >
-          <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">Sobre</span>
+          <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">{t("about.label")}</span>
           <h2 className="font-display text-6xl uppercase leading-none tracking-wide text-foreground md:text-8xl">
-            Quem sou
+            {t("about.title")}
           </h2>
           <div className="flex flex-col gap-4 text-pretty text-sm leading-relaxed text-muted-foreground">
-            <p>
-              Sou o Vitor Oliveira, editor de vídeo e motion designer com base no Brasil. Nos últimos anos, transformei
-              horas de material bruto em histórias que prendem a atenção e emocionam — de comerciais de alto padrão a
-              conteúdo diário para criadores.
-            </p>
-            <p>
-              Meu processo une ritmo, color grading intencional e uma obsessão por detalhes. Acredito que a edição é
-              onde a história realmente ganha vida.
-            </p>
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
           </div>
 
           <div className="mt-4 grid grid-cols-3 gap-6">

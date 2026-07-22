@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display, Bebas_Neue } from 'next/font/google'
+import { I18nBootstrap } from '@/components/i18n-bootstrap'
 import './globals.css'
 
 const inter = Inter({
@@ -61,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`bg-background scroll-smooth ${inter.variable} ${playfair.variable} ${bebas.variable}`}>
       <body className="font-sans antialiased film-grain">
-        {children}
+        <I18nBootstrap>{children}</I18nBootstrap>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

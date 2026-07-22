@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { motion } from "motion/react"
 import { Play } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 import { usePortfolioData } from "@/hooks/usePortfolioData"
 import type { Projeto } from "@/lib/sheets"
 
@@ -28,18 +29,19 @@ function SkeletonCard() {
 }
 
 export function ProjectsSection({ onOpenVideo }: ProjectsSectionProps) {
+  const { t } = useI18n()
   const { projetos, loading, error, retry } = usePortfolioData()
 
   return (
     <section id="projects" className="relative z-10 bg-background px-6 py-24 md:px-10 md:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col gap-4">
-          <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">Portfólio</span>
+          <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">{t("projects.label")}</span>
           <h2 className="font-display text-6xl uppercase leading-none tracking-wide text-foreground md:text-8xl">
-            Projetos
+            {t("projects.title")}
           </h2>
           <p className="max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground">
-            Uma seleção de trabalhos entre comerciais, conteúdo para YouTube e reels — cada um moldado no corte.
+            {t("projects.desc")}
           </p>
         </div>
 
@@ -58,14 +60,14 @@ export function ProjectsSection({ onOpenVideo }: ProjectsSectionProps) {
             <span className="text-4xl" aria-hidden="true">
               {"\u26A0"}
             </span>
-            <p className="font-serif text-xl text-foreground">Não foi possível carregar o portfólio</p>
+            <p className="font-serif text-xl text-foreground">{t("projects.error.title")}</p>
             <p className="text-sm text-muted-foreground">{error}</p>
             <button
               type="button"
               onClick={retry}
               className="rounded-lg border border-border px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
             >
-              Tentar novamente
+              {t("projects.error.retry")}
             </button>
           </div>
         )}
@@ -76,9 +78,9 @@ export function ProjectsSection({ onOpenVideo }: ProjectsSectionProps) {
             <span className="text-4xl" aria-hidden="true">
               {"\u26A0"}
             </span>
-            <p className="font-serif text-xl text-foreground">Nenhum projeto encontrado</p>
+            <p className="font-serif text-xl text-foreground">{t("projects.empty.title")}</p>
             <p className="text-sm text-muted-foreground">
-              Nenhum projeto encontrado na planilha. Verifique os dados e tente novamente.
+              {t("projects.empty.desc")}
             </p>
           </div>
         )}

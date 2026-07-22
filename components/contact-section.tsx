@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import { Mail, MapPin, ArrowUpRight } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 
 const socials = [
   { label: "Instagram", href: "https://instagram.com" },
@@ -11,6 +12,8 @@ const socials = [
 ]
 
 export function ContactSection() {
+  const { t } = useI18n()
+
   return (
     <section id="contact" className="relative z-10 border-t border-border bg-background px-6 py-24 md:px-10 md:py-32">
       <div className="mx-auto max-w-7xl">
@@ -22,13 +25,12 @@ export function ContactSection() {
             transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
             className="flex flex-col gap-6"
           >
-            <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">Contato</span>
+            <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">{t("contact.label")}</span>
             <h2 className="font-display text-6xl uppercase leading-[0.9] tracking-wide text-foreground md:text-8xl">
-              Vamos criar juntos
+              {t("contact.title")}
             </h2>
             <p className="max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-              Tem um projeto em mente? Comerciais, YouTube, reels ou algo totalmente novo — envie uma mensagem e vamos
-              conversar sobre como dar vida à sua história.
+              {t("contact.desc")}
             </p>
 
             <div className="mt-4 flex flex-col gap-4">
@@ -41,7 +43,7 @@ export function ContactSection() {
               </a>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="h-5 w-5" />
-                <span className="text-lg">São Paulo, Brasil</span>
+                <span className="text-lg">{t("contact.location")}</span>
               </div>
             </div>
           </motion.div>
@@ -56,37 +58,37 @@ export function ContactSection() {
           >
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Nome
+                {t("contact.form.name")}
               </label>
               <input
                 id="name"
                 type="text"
                 required
-                placeholder="Seu nome"
+                placeholder={t("contact.form.name.placeholder")}
                 className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-accent"
               />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                E-mail
+                {t("contact.form.email")}
               </label>
               <input
                 id="email"
                 type="email"
                 required
-                placeholder="voce@email.com"
-                className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-accent"
+                placeholder={t("contact.form.email.placeholder")}
+                className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-accent"
               />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="message" className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Mensagem
+                {t("contact.form.message")}
               </label>
               <textarea
                 id="message"
                 required
                 rows={4}
-                placeholder="Conte sobre o seu projeto..."
+                placeholder={t("contact.form.message.placeholder")}
                 className="resize-none rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-accent"
               />
             </div>
@@ -94,7 +96,7 @@ export function ContactSection() {
               type="submit"
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Enviar mensagem
+              {t("contact.form.submit")}
               <ArrowUpRight className="h-4 w-4" />
             </button>
           </motion.form>
@@ -117,7 +119,7 @@ export function ContactSection() {
           </div>
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             {"© "}
-            {new Date().getFullYear()} — Editor de Vídeo
+            {new Date().getFullYear()} — {t("footer.role")}
           </span>
         </div>
       </div>
