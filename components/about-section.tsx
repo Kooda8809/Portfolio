@@ -8,9 +8,9 @@ export function AboutSection() {
   const { t } = useI18n()
 
   const stats = [
-    { value: "8+", label: t("about.stat1") },
-    { value: "240", label: t("about.stat2") },
-    { value: "50M", label: t("about.stat3") },
+    { value: "8+", label: t("about.stats1") },
+    { value: "240", label: t("about.stats2") },
+    { value: "50M", label: t("about.stats3") },
   ]
 
   const tools = ["Premiere Pro", "After Effects", "DaVinci Resolve", "Motion", "Cinema 4D"]
